@@ -12,7 +12,8 @@ function Navbar() {
                     <div className="flex gap-4">
                         Postagens
                         Temas
-                        Casdastrar tema
+                        Cadastrar 
+                        Tema
                         Perfil
                         Sair
                     </div>
