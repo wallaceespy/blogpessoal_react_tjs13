@@ -3,7 +3,8 @@ import type UsuarioLogin from "../models/UsuarioLogin";
 import { login } from "../services/Service";
 
 
-
+// todos os estados e funções que serão compartilhadas
+//com toda minha aplicação
 interface AuthContextProps{
     usuario: UsuarioLogin
     handleLogout(): void
@@ -11,10 +12,13 @@ interface AuthContextProps{
     isLoading: boolean
 }
 
+//quem irá consumir meu provedor
 interface AuthProviderProps{
     children: ReactNode
 }
 
+//criar meu contexto com a tipagem AuthContextProps
+//o meu contexto irá disponibilizar os estados e funçoes do tipo AuthContext
 export const AuthContext = createContext({} as AuthContextProps)
 
 export function AuthProvider({ children}: AuthProviderProps){
