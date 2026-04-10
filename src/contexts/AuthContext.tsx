@@ -1,6 +1,7 @@
 import { createContext, useState, type ReactNode } from "react";
 import type UsuarioLogin from "../models/UsuarioLogin";
 import { login } from "../services/Service";
+import { ToastAlerta } from "../utils/ToastAlerta";
 
 
 // todos os estados e funções que serão compartilhadas
@@ -43,9 +44,9 @@ id: 0,
 
         try{
             await login('/usuarios/logar', usuarioLogin, setUsuario);
-            alert('Usuário autentificado com sucesso!')
+            ToastAlerta('Usuário autentificado com sucesso!', 'sucesso')
         }catch(error){
-            alert('Os dados do Usuário estão inconsistentes!');
+            ToastAlerta('Os dados do Usuário estão inconsistentes!', 'erro');
         }
         setIsLoading(false);
     }

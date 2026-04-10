@@ -12,7 +12,7 @@ function CardPostagem({ postagem }: CardPostagemProps) {
                 
             <div>
                 <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
-                    <img src='{postagem.usuario?.foto}'
+                    <img src={postagem.usuario?.foto}
                          className='h-12 rounded-full'
                           alt={postagem.usuario?.nome} />
                     <h3 className='text-lg font-bold text-center uppercase'>
