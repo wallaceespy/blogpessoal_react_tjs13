@@ -2,7 +2,7 @@ import axios from "axios";
 
 //Cria uma nova instacia do Axios
 const api = axios.create({
-    baseURL: 'https://blogpessoal-tjs-13.onrender.com'
+    baseURL: import.meta.env.VITE_API_URL
 })
 
 
