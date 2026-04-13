@@ -35,7 +35,7 @@ function AtualizarPerfil() {
       if (error.toString().includes("401")) {
         handleLogout()
       } else {
-        ToastAlerta("Usuário não encontrado!")
+        ToastAlerta("Usuário não encontrado!", 'erro')
         retornar()
       }
     }
@@ -43,7 +43,7 @@ function AtualizarPerfil() {
  
   useEffect(() => {
     if (token === "") {
-      ToastAlerta("Você precisa estar logado!")
+      ToastAlerta("Você precisa estar logado!", 'info')
       navigate("/")
     }
   }, [token])
@@ -90,18 +90,18 @@ function AtualizarPerfil() {
             Authorization: token,
           },
         })
-        ToastAlerta("Usuário atualizado! Efetue o Login Novamente!")
+        ToastAlerta("Usuário atualizado! Efetue o Login Novamente!", 'sucesso')
         sucesso()
       } catch (error: any) {
         if (error.toString().includes("401")) {
           handleLogout()
         } else {
-          ToastAlerta("Erro ao atualizar o usuário!")
+          ToastAlerta("Erro ao atualizar o usuário!", 'erro')
           retornar()
         }
       }
     } else {
-      ToastAlerta("Dados inconsistentes. Verifique as informações do usuário.")
+      ToastAlerta("Dados inconsistentes. Verifique as informações do usuário.", 'erro')
       setUser({ ...user, senha: "" })
       setConfirmarSenha("")
     }

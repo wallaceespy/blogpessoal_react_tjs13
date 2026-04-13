@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import type Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 
 function Cadastro() {
@@ -63,15 +64,15 @@ function Cadastro() {
 
         await cadastrarUsuario('/usuarios/cadastrar', usuario, setUsuario)
 
-        ToastAlerta('Usuario Cadastrado com sucesso!');
+        ToastAlerta('Usuario Cadastrado com sucesso!', 'sucesso');
 
       }catch(error){
-        ToastAlerta( 'Erro ao cadastrar o usuário!');
+        ToastAlerta( 'Erro ao cadastrar o usuário!', 'erro');
 
       }
 
     }else{
-      ToastAlerta('Dados do usuário estão inconsistentes!');
+      ToastAlerta('Dados do usuário estão inconsistentes!', 'info');
       setUsuario({
         ...usuario,
         senha: ''

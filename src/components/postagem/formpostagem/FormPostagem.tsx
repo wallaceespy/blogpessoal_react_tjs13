@@ -60,7 +60,7 @@ async function buscarTemas() {
 
 useEffect(() => {
     if (token === '') {
-        ToastAlerta('Você precisa estar logado');
+        ToastAlerta('Você precisa estar logado','erro');
         navigate('/');
     }
 }, [token])
@@ -105,13 +105,13 @@ async function gerarNovaPostagem(e: FormEvent<HTMLFormElement>) {
                 },
             });
 
-            ToastAlerta('Postagem atualizada com sucesso')
+            ToastAlerta('Postagem atualizada com sucesso', 'sucesso')
 
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
             } else {
-                ToastAlerta('Erro ao atualizar a Postagem')
+                ToastAlerta('Erro ao atualizar a Postagem', 'erro')
             }
         }
 
@@ -123,13 +123,13 @@ async function gerarNovaPostagem(e: FormEvent<HTMLFormElement>) {
                 },
             })
 
-            ToastAlerta('Postagem cadastrada com sucesso');
+            ToastAlerta('Postagem cadastrada com sucesso', 'sucesso');
 
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
             } else {
-                ToastAlerta('Erro ao cadastrar a Postagem');
+                ToastAlerta('Erro ao cadastrar a Postagem','erro');
             }
         }
     }
