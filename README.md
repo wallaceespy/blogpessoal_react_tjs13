@@ -1,97 +1,151 @@
-Projeto Blog Pessoal - Frontend com React
+# 📝 Blog Pessoal — Frontend
 
-source: imgur.com
+> Aplicação web desenvolvida com React + TypeScript, consumindo uma API REST construída com Nest.
 
-      
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=flat&logo=vite&logoColor=FFD62E)
 
-1. Descrição
-O Blog Pessoal - Frontend é uma aplicação web desenvolvida com React e TypeScript, com o objetivo de consumir e exibir dados de uma API REST construída com Nest. A aplicação permite a visualização, criação, edição e exclusão de postagens de blog, categorizadas por temas e vinculadas a usuários autenticados.
+---
 
-Funcionalidades:
+## 01. Descrição
 
-Cadastro e login de usuários
-Listagem e gerenciamento de postagens
-Criação, edição e exclusão de temas
-Associação entre postagens, temas e autores
-Navegação entre páginas com React Router Dom
-Consumo de API com Axios
-Estilização com Tailwind CSS
+O **Blog Pessoal - Frontend** é uma aplicação web que permite a visualização, criação, edição e exclusão de postagens de blog, categorizadas por temas e vinculadas a usuários autenticados.
 
-2. Autenticação e Validação de Token JWT
-Fluxo de Autenticação
-O usuário realiza o login com e-mail e senha.
-A aplicação faz uma requisição para a API, que retorna um token JWT.
-O token é armazenado na Context API para uso em futuras requisições autenticadas.
-Nas rotas protegidas, o token é validado antes do acesso aos recursos.
-Controle de Autenticação
-Se o token expirar ou for inválido, o usuário será redirecionado para a página de login.
+**Funcionalidades:**
 
-3. Tecnologias Utilizadas
-Tecnologia	Finalidade
-React	Biblioteca JavaScript para interfaces
-TypeScript	Superset do JavaScript com tipagem
-Tailwind CSS	Estilização com classes utilitárias
-Axios	Consumo de APIs REST
-React Router DOM	Roteamento SPA
-Vite	Build tool rápido para projetos React
+- Cadastro e login de usuários
+- Listagem e gerenciamento de postagens
+- Criação, edição e exclusão de temas
+- Associação entre postagens, temas e autores
+- Navegação entre páginas com React Router Dom
+- Consumo de API com Axios
+- Estilização com Tailwind CSS
 
-4. Pré-requisitos
+---
+
+## 02. Autenticação e Validação de Token JWT
+
+**Fluxo de autenticação:**
+
+1. O usuário realiza o login com e-mail e senha.
+2. A aplicação faz uma requisição para a API, que retorna um token JWT.
+3. O token é armazenado na Context API para uso em futuras requisições autenticadas.
+4. Nas rotas protegidas, o token é validado antes do acesso aos recursos.
+
+> ⚠️ **Controle de autenticação:** Se o token expirar ou for inválido, o usuário será redirecionado para a página de login.
+
+---
+
+## 03. Tecnologias utilizadas
+
+| Tecnologia | Finalidade |
+|---|---|
+| React | Biblioteca JavaScript para interfaces |
+| TypeScript | Superset do JavaScript com tipagem |
+| Tailwind CSS | Estilização com classes utilitárias |
+| Axios | Consumo de APIs REST |
+| React Router DOM | Roteamento SPA |
+| Vite | Build tool rápido para projetos React |
+
+---
+
+## 04. Pré-requisitos
+
 Antes de iniciar o projeto, certifique-se de ter instalado:
 
-Node.js (versão 16 ou superior)
-Git
-Visual Studio Code ou outro editor
-Backend - Nest (Repositório da API)
+- **Node.js** (versão 16 ou superior)
+- **Git**
+- **Visual Studio Code** ou outro editor
+- **Backend Nest** — [Repositório da API](#)
 
-5. Como executar o projeto localmente
-Clone o repositório:
+---
+
+## 05. Como executar o projeto localmente
+
+**1. Clone o repositório:**
+```bash
 git clone https://github.com/rafaelq80/blogpessoal_react_tjs13.git
-Acesse a pasta do projeto:
+```
+
+**2. Acesse a pasta do projeto:**
+```bash
 cd blogpessoal_react_tjs13
-Instale as dependências:
+```
+
+**3. Instale as dependências:**
+```bash
 npm install
-Execute o projeto em modo desenvolvimento:
+```
+
+**4. Execute o projeto em modo desenvolvimento:**
+```bash
 npm run dev
-Acesse a aplicação em:
+```
+
+**5. Acesse a aplicação em:**
+```
 http://localhost:5173
+```
 
-6. Integração com a API Backend
-A aplicação se comunica com a API do projeto:
+---
 
-🔗 Blog Pessoal - Backend Nest
+## 06. Integração com a API Backend
 
-A URL base da API deve ser configurada (ex: http://localhost:4000) em um arquivo de configuração, como .env, ou diretamente nos serviços do Axios.
+A aplicação se comunica com a API do projeto **Blog Pessoal — Backend Nest**.
 
+A URL base da API deve ser configurada em um arquivo `.env` ou diretamente nos serviços do Axios:
 
-7. Estrutura de Diretórios
+```env
+VITE_API_URL=http://localhost:4000
+```
+
+---
+
+## 07. Estrutura de diretórios
+
+```
 src/
 │
 ├── assets/           → Imagens e ícones
 ├── components/       → Componentes reutilizáveis
-├── contexts/         → Gerenciamento de estado global (ex: autenticação)
+├── contexts/         → Gerenciamento de estado global (autenticação)
 ├── models/           → Interfaces e tipos do projeto
 ├── pages/            → Páginas da aplicação
 ├── services/         → Configuração do Axios
 ├── utils/            → Funções auxiliares (ToastAlertas)
-├── App.css           → Estilos do Componente raiz
+├── App.css           → Estilos do componente raiz
 ├── App.tsx           → Componente raiz
 ├── main.tsx          → Entrada da aplicação
 └── index.css         → Estilos globais com Tailwind
+```
 
-8. Implementações futuras
-Upload de imagem de perfil para o usuário
-Responsividade aprimorada
-Validações com React Hook Form
-Testes com Jest + React Testing Library
+---
 
-9. Contribuição
+## 08. Implementações futuras
+
+- [ ] Upload de imagem de perfil para o usuário
+- [ ] Responsividade aprimorada
+- [ ] Validações com React Hook Form
+- [ ] Testes com Jest + React Testing Library
+
+---
+
+## 09. Contribuição
+
 Contribuições são bem-vindas!
 
 Se você encontrou algum problema ou deseja propor melhorias:
 
-Abra uma issue
-Envie um pull request
-Compartilhe com colegas aprendizes!
+- Abra uma **issue**
+- Envie um **pull request**
+- Compartilhe com colegas aprendizes!
 
-10. Contato
-Desenvolvido por Rafael Dúvidas ou sugestões? Entre em contato pelo GitHub ou abra uma issue no repositório.
+---
+
+## 10. Contato
+
+Desenvolvido por **Rafael**
+
+Dúvidas ou sugestões? Entre em contato pelo GitHub ou abra uma issue no repositório.
