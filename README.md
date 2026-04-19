@@ -146,6 +146,6 @@ Se você encontrou algum problema ou deseja propor melhorias:
 
 ## 10. Contato
 
-Desenvolvido por **Rafael**
+Desenvolvido por **Wallace**
 
 Dúvidas ou sugestões? Entre em contato pelo GitHub ou abra uma issue no repositório.
