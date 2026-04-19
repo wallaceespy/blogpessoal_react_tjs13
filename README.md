@@ -1,73 +1,97 @@
-# React + TypeScript + Vite
+Projeto Blog Pessoal - Frontend com React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+source: imgur.com
 
-Currently, two official plugins are available:
+      
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Descrição
+O Blog Pessoal - Frontend é uma aplicação web desenvolvida com React e TypeScript, com o objetivo de consumir e exibir dados de uma API REST construída com Nest. A aplicação permite a visualização, criação, edição e exclusão de postagens de blog, categorizadas por temas e vinculadas a usuários autenticados.
 
-## React Compiler
+Funcionalidades:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Cadastro e login de usuários
+Listagem e gerenciamento de postagens
+Criação, edição e exclusão de temas
+Associação entre postagens, temas e autores
+Navegação entre páginas com React Router Dom
+Consumo de API com Axios
+Estilização com Tailwind CSS
 
-## Expanding the ESLint configuration
+2. Autenticação e Validação de Token JWT
+Fluxo de Autenticação
+O usuário realiza o login com e-mail e senha.
+A aplicação faz uma requisição para a API, que retorna um token JWT.
+O token é armazenado na Context API para uso em futuras requisições autenticadas.
+Nas rotas protegidas, o token é validado antes do acesso aos recursos.
+Controle de Autenticação
+Se o token expirar ou for inválido, o usuário será redirecionado para a página de login.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. Tecnologias Utilizadas
+Tecnologia	Finalidade
+React	Biblioteca JavaScript para interfaces
+TypeScript	Superset do JavaScript com tipagem
+Tailwind CSS	Estilização com classes utilitárias
+Axios	Consumo de APIs REST
+React Router DOM	Roteamento SPA
+Vite	Build tool rápido para projetos React
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+4. Pré-requisitos
+Antes de iniciar o projeto, certifique-se de ter instalado:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Node.js (versão 16 ou superior)
+Git
+Visual Studio Code ou outro editor
+Backend - Nest (Repositório da API)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+5. Como executar o projeto localmente
+Clone o repositório:
+git clone https://github.com/rafaelq80/blogpessoal_react_tjs13.git
+Acesse a pasta do projeto:
+cd blogpessoal_react_tjs13
+Instale as dependências:
+npm install
+Execute o projeto em modo desenvolvimento:
+npm run dev
+Acesse a aplicação em:
+http://localhost:5173
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+6. Integração com a API Backend
+A aplicação se comunica com a API do projeto:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🔗 Blog Pessoal - Backend Nest
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+A URL base da API deve ser configurada (ex: http://localhost:4000) em um arquivo de configuração, como .env, ou diretamente nos serviços do Axios.
+
+
+7. Estrutura de Diretórios
+src/
+│
+├── assets/           → Imagens e ícones
+├── components/       → Componentes reutilizáveis
+├── contexts/         → Gerenciamento de estado global (ex: autenticação)
+├── models/           → Interfaces e tipos do projeto
+├── pages/            → Páginas da aplicação
+├── services/         → Configuração do Axios
+├── utils/            → Funções auxiliares (ToastAlertas)
+├── App.css           → Estilos do Componente raiz
+├── App.tsx           → Componente raiz
+├── main.tsx          → Entrada da aplicação
+└── index.css         → Estilos globais com Tailwind
+
+8. Implementações futuras
+Upload de imagem de perfil para o usuário
+Responsividade aprimorada
+Validações com React Hook Form
+Testes com Jest + React Testing Library
+
+9. Contribuição
+Contribuições são bem-vindas!
+
+Se você encontrou algum problema ou deseja propor melhorias:
+
+Abra uma issue
+Envie um pull request
+Compartilhe com colegas aprendizes!
+
+10. Contato
+Desenvolvido por Rafael Dúvidas ou sugestões? Entre em contato pelo GitHub ou abra uma issue no repositório.
